@@ -8,7 +8,7 @@ import { RegisterAuthorizationInterface, RegisterResponseInterface } from './log
   providedIn: 'root'
 })
 export class LoginService {
-  private base_url = 'http://localhost:8000/api/auth';
+  private base_url = 'https://sys-fin-api.onrender.com/api/auth';
 
   constructor(public http: HttpClient) { }
 
