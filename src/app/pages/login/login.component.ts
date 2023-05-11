@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         StorageUtil.store('isLogged', true);
         StorageUtil.store('token', res.access_token);
         StorageUtil.store('token_type', res.token_type);
-        location.href = '/home';
+        location.href = '/contas';
       }
     });
   }

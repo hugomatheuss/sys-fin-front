@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(private service: LoginService, private route: Router, private fb: UntypedFormBuilder) {
     this.form = this.fb.group({
       email: ['', Validators.required],
+      cnpj: ['', Validators.required],
       password: ['', Validators.required],
       name: ['', Validators.required]
     })
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit {
         StorageUtil.store('isLogged', true);
         StorageUtil.store('token', res.authorization.access_token);
         StorageUtil.store('token_type', res.authorization.token_type);
-        location.href = '/home';
+        location.href = '/contas';
       }
     })
   }
