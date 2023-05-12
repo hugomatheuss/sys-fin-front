@@ -9,7 +9,8 @@ import { StorageUtil } from '../utils/storage.util';
     providedIn: 'root'
 })
 export class ContaService {
-    private base_url = 'https://sys-fin-api.onrender.com/api/auth';
+    private base_urlProd = 'https://sys-fin-api.onrender.com/api/auth';
+    private base_urlDev = 'http://localhost:8000/api/auth';
     private options: any;
 
     constructor(public http: HttpClient) {
@@ -20,23 +21,23 @@ export class ContaService {
     }
 
     getConta(id: number): Observable<any> {
-        return this.http.get<{ data: Conta}>(`${this.base_url}/contas/${id}`, this.options);
+        return this.http.get<{ data: Conta}>(`${this.base_urlDev}/contas/${id}`, this.options);
     }
 
     getContas(): Observable<any> {
-        return this.http.get<{data: Array<Conta>}>(`${this.base_url}/contas`, this.options);
+        return this.http.get<{data: Array<Conta>}>(`${this.base_urlDev}/contas`, this.options);
     }
 
-    salvarConta(conta: Conta) {
-        return this.http.post<boolean>(`${this.base_url}/contas`, conta, this.options);
+    salvarConta(conta: Conta): Observable<any> {
+        return this.http.post<boolean>(`${this.base_urlDev}/contas`, conta, this.options);
     }
 
-    editarConta(conta: Conta) {
-        return this.http.put<boolean>(`${this.base_url}/contas/${conta.id}`, conta, this.options);
+    editarConta(conta: Conta): Observable<any> {
+        return this.http.put<boolean>(`${this.base_urlDev}/contas/${conta.id}`, conta, this.options);
     }
 
     excluirConta(id: number) {
-        return this.http.delete<boolean>(`${this.base_url}/contas/${id}`, this.options);
+        return this.http.delete<boolean>(`${this.base_urlDev}/contas/${id}`, this.options);
     }
 
 }

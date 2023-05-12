@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
       cnpj: ['', Validators.required],
       razaoSocial: ['', Validators.required],
       password: ['', Validators.required],
+      confirm_password: ['', Validators.required],
       name: ['', Validators.required]
     })
   }

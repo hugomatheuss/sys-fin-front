@@ -2,40 +2,40 @@
     <form [formGroup]="form">
         <div class="container__form">
             <div class="form-control">
-                <label>Fornecedor:</label>
+                <label>Fornecedor: </label>
                 <input formControlName="fornecedor" type="text" max="30"/>
             </div>
             <div class="form-control">
-                <label>Valor:</label>
+                <label>Valor: </label>
                 <input formControlName="valor" type="text"/>
             </div>
             <div class="form-control">
-                <label>Descrição:</label>
+                <label>Descrição: </label>
                 <input formControlName="descricao" type="text"/>
             </div>
             <div class="form-control">
-                <label>Status:</label>
-                <input formControlName="status" type=""/>
+                <label>Status: </label>
+                <mat-checkbox formControlName="status" type=""/>
             </div>
             <div class="form-control">
-                <label>Tipo:</label>
-                <select formControlName="yipo">
+                <label>Tipo: </label>
+                <select formControlName="tipo">
                     <option>Selecione</option>
                     <option [value]="1">Operacional</option>
                     <option [value]="2">Não Operacional</option>
                 </select>
             </div>
             <div class="form-control">
-                <label>Número de Documento:</label>
+                <label>Número de Documento: </label>
                 <input formControlName="numeroDocumento" type="text"/>
             </div>
             <div class="form-control">
-                <label>Data do Pagamento:</label>
-                <input formControlName="dataPagamento" type=""/>
+                <label>Data do Pagamento: </label>
+                <input formControlName="dataPagamento" type="date"/>
             </div>
             <div class="form-control">
-                <label>Data do Vencimento:</label>
-                <input formControlName="dataVencimento" type=""/>
+                <label>Data do Vencimento: </label>
+                <input formControlName="dataVencimento" type="date"/>
             </div>
         </div>
         <div class="mt-5">

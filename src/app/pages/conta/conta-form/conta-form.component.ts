@@ -70,13 +70,13 @@ export class ContaFormComponent implements OnInit {
       if(this.isEditar) {
         this.service.editarConta(this.form.value).subscribe((res) => {
           if(res) {
-            this.router.navigateByUrl('/conta');
+            this.router.navigateByUrl('contas');
           }
         })
       } else {
-        this.service.salvarConta(this.form.value).subscribe((res) => {
+        this.service.salvarConta(this.form.value).subscribe(res => {
           if(res) {
-            this.router.navigateByUrl('/conta');
+            this.router.navigateByUrl(`contas`);
           }
         })
       }

@@ -3,24 +3,28 @@
         <h1>Cadastrar</h1>
         <form [formGroup]="form">
             <div class="mb-3">
-                <span for="nome">Nome:</span>
+                <span for="nome">Nome*:</span>
                 <input type="text" formControlName="name" class="form-control" id="nome">
             </div>
             <div class="mb-3">
-                <span for="email">Email:</span>
+                <span for="email">Email*:</span>
                 <input type="text" formControlName="email" class="form-control" id="email">
             </div>
             <div class="mb-3">
-                <span for="cnpj">CNPJ:</span>
+                <span for="cnpj">CNPJ*:</span>
                 <input type="text" formControlName="cnpj" class="form-control" id="cnpj">
             </div>
             <div class="mb-3">
-                <span for="razaoSocial">Razão Social:</span>
+                <span for="razaoSocial">Razão Social*:</span>
                 <input type="text" formControlName="razaoSocial" class="form-control" id="razaoSocial">
             </div>
             <div class="mb-3">
-                <span for="senha">Senha:</span>
+                <span for="senha">Senha*:</span>
                 <input type="password" formControlName="password" class="form-control" id="senha">
+            </div>
+            <div class="mb-3">
+                <span for="senha">Confirmar senha*:</span>
+                <input type="password" formControlName="confirm_password" class="form-control" id="confirm_password">
             </div>
             <div class="button-bar">
                 <button (click)="salvar()" class="btn btn-primary">Cadastrar</button>

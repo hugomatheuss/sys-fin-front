@@ -40,7 +40,7 @@ export class ContaListComponent implements OnInit {
   }
 
   goToForm(id?: number): void {
-    this.router.navigate([`conta/form-conta/${id?? ''}`]);
+    this.router.navigate([`/contas/form-conta/${id?? ''}`]);
   }
 
 }
