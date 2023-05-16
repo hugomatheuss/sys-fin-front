@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+ /*
 h1, h2, h3, h4, p, label, a, span, th, td {
     font-family: 'Verdana';
 }
@@ -58,7 +60,7 @@ h1, h2, h3, h4, p, label, a, span, th, td {
     margin-bottom: 25px; 
 }
 
-.btn {
+ .btn {
     padding: 10px;
     border-radius: 5px;
     margin-right: 5px;
@@ -71,12 +73,15 @@ h1, h2, h3, h4, p, label, a, span, th, td {
     }
 }
 
-.primary {
+ .primary {
     border: none;
     color: #fff;
-    background-color: #153B50;
+    background-color: #556ceb;
 }
 
 .secondary {
 
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ */

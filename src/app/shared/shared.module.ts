@@ -9,7 +9,9 @@ import { ListComponent } from './list/list.component';
 import { CardComponent } from './card/card.component';
 import { LoginService } from '../services/login.service';
 
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { LoginService } from '../services/login.service';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTableModule,
   ],
   exports: [
     HeaderComponent,

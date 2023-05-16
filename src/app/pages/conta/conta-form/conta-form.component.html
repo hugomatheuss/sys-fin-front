@@ -1,46 +1,52 @@
 <app-card [titleCard]="title">
     <form [formGroup]="form">
-        <div class="container__form">
-            <div class="form-control">
-                <label>Fornecedor: </label>
-                <input formControlName="fornecedor" type="text" max="30"/>
-            </div>
-            <div class="form-control">
-                <label>Valor: </label>
-                <input formControlName="valor" type="text"/>
-            </div>
-            <div class="form-control">
-                <label>Descrição: </label>
-                <input formControlName="descricao" type="text"/>
-            </div>
-            <div class="form-control">
-                <label>Status: </label>
-                <mat-checkbox formControlName="status" type=""/>
-            </div>
-            <div class="form-control">
-                <label>Tipo: </label>
-                <select formControlName="tipo">
-                    <option>Selecione</option>
-                    <option [value]="1">Operacional</option>
-                    <option [value]="2">Não Operacional</option>
-                </select>
-            </div>
-            <div class="form-control">
-                <label>Número de Documento: </label>
-                <input formControlName="numeroDocumento" type="text"/>
-            </div>
-            <div class="form-control">
-                <label>Data do Pagamento: </label>
-                <input formControlName="dataPagamento" type="date"/>
-            </div>
-            <div class="form-control">
-                <label>Data do Vencimento: </label>
-                <input formControlName="dataVencimento" type="date"/>
-            </div>
+        <div class="container-form">
+            <mat-form-field class="form-control">
+                <mat-label>Fornecedor</mat-label>
+                <input matInput formControlName="fornecedor" placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <mat-label>Valor</mat-label>
+                <input matInput formControlName="valor" placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <mat-label>Descrição</mat-label>
+                <input matInput formControlName="descricao" placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <mat-label>Status</mat-label>
+                <input matInput formControlName="status" placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <mat-label>Tipo: </mat-label>
+                <mat-select matNativeControl formControlName="tipo">
+                    <mat-option>Selecione</mat-option>
+                    <mat-option [value]="1">Operacional</mat-option>
+                    <mat-option [value]="2">Não Operacional</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-control">
+                <mat-label>Número do documento</mat-label>
+                <input matInput formControlName="numeroDocumento" placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="form-control" appearance="fill">
+                <mat-label>Data do Pagamento: </mat-label>
+                <input matInput [matDatepicker]="dataPagamento" formControlName="dataPagamento">
+                <mat-hint>DD/MM/AAAA</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="dataPagamento"></mat-datepicker-toggle>
+                <mat-datepicker #dataPagamento></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="form-control" appearance="fill">
+                <mat-label>Data do Vencimento: </mat-label>
+                <input matInput [matDatepicker]="dataVencimento" formControlName="dataVencimento">
+                <mat-hint>DD/MM/AAAA</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="dataVencimento"></mat-datepicker-toggle>
+                <mat-datepicker #dataVencimento></mat-datepicker>
+            </mat-form-field>
         </div>
         <div class="mt-5">
-            <button (click)="salvaConta()" class="btn primary">Adicionar</button>
-            <button (click)="goBack()" class="btn secondary">Cancelar</button>
+            <button (click)="salvaConta()" mat-raised-button color="primary">Adicionar</button>
+            <button (click)="goBack()" mat-raised-button color="warn">Cancelar</button>
         </div>
     </form>
 </app-card>

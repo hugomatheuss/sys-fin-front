@@ -1,5 +1,5 @@
 <div class="container__list">
-    <table>
+    <table class="mat-elevation-z8">
         <thead>
             <th>Fornecedor</th>
             <th>Valor</th>
@@ -21,11 +21,11 @@
                 <td>{{ conta?.dataPagamento }}</td>
                 <td>{{ conta?.dataVencimento }}</td>
                 <td>
-                    <button (click)="goToForm(conta.id)" class="btn primary">
+                    <button (click)="goToForm(conta.id)" mat-fab color="primary">
                         Editar
                     </button>
-                     <button (click)="remove(conta.id)" class="btn danger">
-                        Excluir
+                     <button (click)="remove(conta.id)" mat-fab color="primary">
+                        <mat-icon>delete</mat-icon>                    
                     </button>
                 </td>
             </tr>

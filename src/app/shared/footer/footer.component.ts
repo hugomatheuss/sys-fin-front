@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  labelFooter: string = 'Hugo Matheus';
-  contato: string = '(81) 8961-7916';
+  labelFooter: string = '';
+  contato: string = '';
 
   constructor() { }
 

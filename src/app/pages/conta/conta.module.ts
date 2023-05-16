@@ -9,7 +9,12 @@ import { ContaFormComponent } from './conta-form/conta-form.component';
 import { RouterModule } from '@angular/router';
 import { ContaListComponent } from './conta-list/conta-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,8 +28,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [ContaService]
+  providers: [
+    ContaService,
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ]
 })
 export class ContaModule { }
