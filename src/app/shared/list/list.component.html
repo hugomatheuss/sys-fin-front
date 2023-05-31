@@ -15,8 +15,8 @@
                 <td>{{ conta?.fornecedor }}</td>
                 <td>{{ conta?.valor }}</td>
                 <td>{{ conta?.descricao }}</td>
-                <td>{{ conta?.status }}</td>
-                <td>{{ conta?.tipo }}</td>
+                <td>{{ getStatusLabel(conta?.status) }}</td>
+                <td>{{ getTipoLabel(conta?.tipo) }}</td>
                 <td>{{ conta?.numeroDocumento }}</td>
                 <td>{{ conta?.dataPagamento }}</td>
                 <td>{{ conta?.dataVencimento }}</td>

@@ -22,18 +22,27 @@ export class ListComponent implements OnInit {
     this.router.navigate([`contas/form-conta/${id?? ''}`]);
   }
 
-  /* getCategoriaLabel(categoria: string): string {
-    switch (categoria) {
+  getStatusLabel(status: string): string {
+    switch (status) {
       case '1':
-          return 'Admin'
+          return 'Pago'
         case '2':
-          return 'Gerente'
-        case '3':
-          return 'Normal'
+          return 'À Pagar'
         default:
-          return 'Sem categoria';
+          return '';
     }
-  } */
+  }
+
+  getTipoLabel(tipo: string): string {
+    switch (tipo) {
+      case '1':
+          return 'Operacional'
+        case '2':
+          return 'Não Operacional'
+        default:
+          return '';
+    }
+  }
 
   remove(id: number): void {
     this.removeConta.emit(id);
