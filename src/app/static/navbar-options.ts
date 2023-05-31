@@ -4,7 +4,7 @@ export const NavbarOptions = [
         alt: 'Home',
         label: 'ÍNICIO',
         router: '/home',
-        needLogin: false
+        needLogin: true
     },
     {
         icon: '',
@@ -17,14 +17,7 @@ export const NavbarOptions = [
         icon: '',
         alt: 'Relatórios',
         label: 'RELATÓRIOS',
-        router: '/contas/relatorios',
-        needLogin: true
-    },
-    {
-        icon: '',
-        alt: 'Contatos',
-        label: 'CONTATO',
-        router: '/contato',
+        router: '/relatorio',
         needLogin: true
     },
     {
