@@ -1,9 +1,17 @@
 .container-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .form-control {
     width: 100%;
+}
+
+.my-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
