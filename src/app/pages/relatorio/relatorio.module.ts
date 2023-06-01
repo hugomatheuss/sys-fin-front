@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { RelatorioRoutingModule } from './relatorio-routing.module';
+import { RelatorioComponent } from './relatorio.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RelatorioFormComponent } from './relatorio-form/relatorio-form.component';
 import { RouterModule } from '@angular/router';
@@ -15,10 +17,12 @@ import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations: [
-        RelatorioFormComponent
+      RelatorioComponent,
+      RelatorioFormComponent
     ],
     imports: [
       CommonModule,
+      RelatorioRoutingModule,
       SharedModule,
       RouterModule,
       FormsModule,

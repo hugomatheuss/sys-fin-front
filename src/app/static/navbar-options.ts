@@ -1,15 +1,10 @@
 export const NavbarOptions = [
     {
-        icon: '',
-        alt: 'Home',
-        label: 'ÍNICIO',
-        router: '/home',
-        needLogin: true
     },
     {
         icon: '',
-        alt: 'Contas',
-        label: 'CONTAS',
+        alt: 'Início',
+        label: 'INÍCIO',
         router: '/contas',
         needLogin: true
     },
