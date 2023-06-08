@@ -9,7 +9,7 @@ const routes: Routes = [
     component: RelatorioComponent,
     children: [
       {
-        path: 'form-relatorio',
+        path: '',
         component: RelatorioFormComponent
       },
     ]

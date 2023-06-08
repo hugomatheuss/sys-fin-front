@@ -5,6 +5,7 @@ import { RelatorioRoutingModule } from './relatorio-routing.module';
 import { RelatorioComponent } from './relatorio.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RelatorioFormComponent } from './relatorio-form/relatorio-form.component';
+import { RelatorioListComponent } from './relatorio-list/relatorio-list-component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,7 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 @NgModule({
     declarations: [
       RelatorioComponent,
-      RelatorioFormComponent
+      RelatorioFormComponent,
+      RelatorioListComponent
     ],
     imports: [
       CommonModule,
