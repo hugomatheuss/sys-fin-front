@@ -17,10 +17,11 @@
                     <mat-label>Valor</mat-label>
                     <input matInput formControlName="valor" placeholder="" value="">
                 </mat-form-field>
-                <mat-form-field class="relatorio-form-control-left">
+                <mat-radio-group formControlName="status" class="relatorio-form-control-left">
                     <mat-label>Status</mat-label>
-                    <input matInput formControlName="status" placeholder="" value="">
-                </mat-form-field>
+                    <mat-radio-button value="1">Pago</mat-radio-button>
+                    <mat-radio-button value="2">Não Pago</mat-radio-button>
+                </mat-radio-group>
             </div>
             <div class="relatorio-form-container">
                 <mat-form-field class="relatorio-form-control-right">
