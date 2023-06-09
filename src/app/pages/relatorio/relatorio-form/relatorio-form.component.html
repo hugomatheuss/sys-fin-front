@@ -2,33 +2,35 @@
     <mat-card-title></mat-card-title>
     <mat-card-content>
         <form [formGroup]="form">
-            <div class="container-form">
-                <mat-form-field class="relatorio-form-control">
+            <div class="relatorio-form-container">
+                <mat-form-field class="relatorio-form-control-right">
                     <mat-label>Fornecedor</mat-label>
                     <input matInput formControlName="fornecedor" placeholder="" value="">
                 </mat-form-field>
-                <mat-form-field class="relatorio-form-control">
+                <mat-form-field class="relatorio-form-control-left">
                     <mat-label>Número do documento</mat-label>
                     <input matInput formControlName="numeroDocumento" placeholder="" value="">
                 </mat-form-field>
-                <mat-form-field class="relatorio-form-control">
+            </div>
+            <div class="relatorio-form-container">
+                <mat-form-field class="relatorio-form-control-right">
                     <mat-label>Valor</mat-label>
                     <input matInput formControlName="valor" placeholder="" value="">
                 </mat-form-field>
-                <mat-form-field class="relatorio-form-control">
+                <mat-form-field class="relatorio-form-control-left">
                     <mat-label>Status</mat-label>
                     <input matInput formControlName="status" placeholder="" value="">
                 </mat-form-field>
             </div>
-            <div class="container-form">
-                <mat-form-field class="relatorio-form-date-control">
+            <div class="relatorio-form-container">
+                <mat-form-field class="relatorio-form-control-right">
                     <mat-label>Data Inicial: </mat-label>
                     <input matInput [matDatepicker]="dataInicial" formControlName="dataInicial">
                     <mat-hint>DD/MM/AAAA</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="dataInicial"></mat-datepicker-toggle>
                     <mat-datepicker #dataInicial></mat-datepicker>
                 </mat-form-field>
-                <mat-form-field class="relatorio-form-date-control">
+                <mat-form-field class="relatorio-form-control-left">
                     <mat-label>Data Inicial: </mat-label>
                     <input matInput [matDatepicker]="dataFinal" formControlName="dataFinal">
                     <mat-hint>DD/MM/AAAA</mat-hint>
@@ -42,5 +44,6 @@
                 <button (click)="goBack()" mat-raised-button color="warn">Voltar</button>
             </div>
         </form>
+        <app-relatorio-list></app-relatorio-list>
     </mat-card-content>
 </app-card>

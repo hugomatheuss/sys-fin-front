@@ -10,6 +10,7 @@ export class ListComponent implements OnInit {
 
   @Output() removeConta: EventEmitter<number> = new EventEmitter();
   @Input() listContas: Array<any> = [];
+  @Input() listResultadoRelatorio: Array<any> = [];
 
   constructor(
     private router: Router
