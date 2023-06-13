@@ -44,7 +44,8 @@
                 <button (click)="filtrarContas()" mat-raised-button color="primary">Buscar</button>
                 <button (click)="goBack()" mat-raised-button color="warn">Voltar</button>
             </div>
+            <hr/>
         </form>
-        <app-relatorio-list></app-relatorio-list>
+        <app-relatorio-list [listContas]="listContas"></app-relatorio-list>
     </mat-card-content>
 </app-card>

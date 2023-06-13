@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Conta } from "src/app/model/conta";
+import { ContaService } from 'src/app/services/conta.service';
 
 @Component({
     selector: 'app-relatorio-list',
@@ -10,9 +10,10 @@ import { Conta } from "src/app/model/conta";
 })
 export class RelatorioListComponent implements OnInit {
     title: string = '';
-    listResultadoRelatorio: Array<Conta> = [];
+    @Input() listContas: Array<any> = [];
 
     constructor(
+        private service: ContaService,
         private activatedRoute: ActivatedRoute,
         private location: Location
     ) {
@@ -20,15 +21,11 @@ export class RelatorioListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.title = 'Resultado';
+        this.title = '';
         this.activatedRoute.params.subscribe(params => {});
     }
 
     goBack(): void {
         this.location.back();
-    }
-
-    getListResultadoRelatorio(): void {
-        
     }
 }

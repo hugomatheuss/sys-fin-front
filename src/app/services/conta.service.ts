@@ -40,7 +40,7 @@ export class ContaService {
         return this.http.delete<boolean>(`${this.base_urlDev}/contas/${id}`, this.options);
     }
 
-    filtrarContas(campos: Array<string>) {
+    filtrarContas(campos: Array<string>): Observable<any> {
         return this.http.post<boolean>(`${this.base_urlDev}/contas/buscar`, campos, this.options);
     }
 

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Conta } from 'src/app/model/conta';
 
 @Component({
   selector: 'app-list',
@@ -10,13 +11,13 @@ export class ListComponent implements OnInit {
 
   @Output() removeConta: EventEmitter<number> = new EventEmitter();
   @Input() listContas: Array<any> = [];
-  @Input() listResultadoRelatorio: Array<any> = [];
 
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void {
+
   }
 
   goToForm(id?: number): void {
@@ -26,27 +27,26 @@ export class ListComponent implements OnInit {
   getStatusLabel(status: string): string {
     switch (status) {
       case '1':
-          return 'Pago'
-        case '2':
-          return 'À Pagar'
-        default:
-          return '';
+        return 'Pago'
+      case '2':
+        return 'À Pagar'
+      default:
+        return '';
     }
   }
 
   getTipoLabel(tipo: string): string {
     switch (tipo) {
       case '1':
-          return 'Operacional'
-        case '2':
-          return 'Não Operacional'
-        default:
-          return '';
+        return 'Operacional'
+      case '2':
+        return 'Não Operacional'
+      default:
+        return '';
     }
   }
 
   remove(id: number): void {
     this.removeConta.emit(id);
   }
-
 }

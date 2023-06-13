@@ -12,6 +12,7 @@ import { ContaService } from 'src/app/services/conta.service';
 export class RelatorioFormComponent implements OnInit {
     title: string = '';
     form: UntypedFormGroup;
+    listContas: Array<any> = [];
 
     constructor(
         private fb: UntypedFormBuilder,
@@ -41,8 +42,8 @@ export class RelatorioFormComponent implements OnInit {
 
     filtrarContas() {
       this.service.filtrarContas(this.form.value).subscribe((res) => {
-        if (res) {
-            this.router.navigateByUrl('relatorio');
+        if (res.data) {
+          this.listContas = res.data;
         }
       })
     }

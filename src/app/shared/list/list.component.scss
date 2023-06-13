@@ -8,5 +8,15 @@
             padding: 15px;
             border: 1px solid #ddd;
         }
+
+        .pago {
+            color: green;
+            font-weight: bold;
+        }
+
+        .nao-pago {
+            color: red;
+            font-weight: bold;
+        }
     }
 }
