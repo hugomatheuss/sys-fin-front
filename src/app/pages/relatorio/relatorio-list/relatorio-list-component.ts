@@ -13,7 +13,6 @@ export class RelatorioListComponent implements OnInit {
     @Input() listContas: Array<any> = [];
 
     constructor(
-        private service: ContaService,
         private activatedRoute: ActivatedRoute,
         private location: Location
     ) {
@@ -23,9 +22,5 @@ export class RelatorioListComponent implements OnInit {
     ngOnInit(): void {
         this.title = '';
         this.activatedRoute.params.subscribe(params => {});
-    }
-
-    goBack(): void {
-        this.location.back();
     }
 }

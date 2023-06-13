@@ -40,7 +40,7 @@ export class RelatorioFormComponent implements OnInit {
       this.location.back();
     }
 
-    filtrarContas() {
+    filtrarContas(): void {
       this.service.filtrarContas(this.form.value).subscribe((res) => {
         if (res.data) {
           this.listContas = res.data;

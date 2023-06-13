@@ -1,5 +1,8 @@
 <div class="container__list">
-    <table class="mat-elevation-z8">
+    <div>
+        <button (click)="gerarPdf()" mat-raised-button>Emitir PDF</button>
+    </div>
+    <table class="mat-elevation-z8" id="content">
         <thead>
             <th>Fornecedor</th>
             <th>Valor</th>
