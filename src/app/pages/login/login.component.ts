@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private service: LoginService, private route: Router, private fb: UntypedFormBuilder) {
     this.form = this.fb.group({
-      email: ['', Validators.required],
+      cnpj: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
@@ -25,12 +25,13 @@ export class LoginComponent implements OnInit {
 
   entrar() {
     this.service.login(this.form.value).subscribe((res) => {
-      if (res.access_token) {
+      if (!res.access_token) {
+        console.log(res)
+      }
         StorageUtil.store('isLogged', true);
         StorageUtil.store('token', res.access_token);
         StorageUtil.store('token_type', res.token_type);
-        location.href = '/contas';
-      }
+        location.href = '/relatorio';
     });
   }
 
