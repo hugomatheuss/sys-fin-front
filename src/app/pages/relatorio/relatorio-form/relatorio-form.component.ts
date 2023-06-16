@@ -40,6 +40,10 @@ export class RelatorioFormComponent implements OnInit {
       this.location.back();
     }
 
+    goToForm(id?: number): void {
+      this.router.navigate([`/contas/form-conta/${id?? ''}`]);
+    }
+
     filtrarContas(): void {
       this.service.filtrarContas(this.form.value).subscribe((res) => {
         if (res.data) {

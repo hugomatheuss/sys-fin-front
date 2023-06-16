@@ -5,16 +5,16 @@ export const NavbarOptions = [
         icon: '',
         alt: 'Início',
         label: 'INÍCIO',
-        router: '/contas',
+        router: '/relatorio',
         needLogin: true
     },
-    {
+/*     {
         icon: '',
         alt: 'Relatórios',
         label: 'RELATÓRIOS',
         router: '/relatorio',
         needLogin: true
-    },
+    }, */
     {
         icon: '',
         alt: 'Login',

@@ -9,9 +9,17 @@
     width: 100%;
 }
 
-.my-button {
+.group-button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+}
+
+.my-button-left {
+    margin-right: 20px;
+}
+
+.my-button-right {
+    margin-left: 20px;
 }

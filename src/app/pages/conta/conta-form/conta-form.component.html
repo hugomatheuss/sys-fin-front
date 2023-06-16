@@ -14,20 +14,18 @@
                     <mat-label>Descrição</mat-label>
                     <input matInput formControlName="descricao" placeholder="" value="">
                 </mat-form-field>
-                <mat-form-field class="form-control">
+                <mat-radio-group formControlName="status" class="form-control">
                     <mat-label>Status</mat-label>
-                    <input matInput formControlName="status" placeholder="" value="">
-                </mat-form-field>
+                    <mat-radio-button value="1">Pago</mat-radio-button>
+                    <mat-radio-button value="2">Não Pago</mat-radio-button>
+                </mat-radio-group>
             </div>
             <div>
-                <mat-form-field class="form-control">
-                    <mat-label>Tipo: </mat-label>
-                    <mat-select matNativeControl formControlName="tipo">
-                        <mat-option>Selecione</mat-option>
-                        <mat-option [value]="1">Operacional</mat-option>
-                        <mat-option [value]="2">Não Operacional</mat-option>
-                    </mat-select>
-                </mat-form-field>
+                <mat-radio-group formControlName="tipo" class="form-control">
+                    <mat-label>Tipo</mat-label>
+                    <mat-radio-button value="1">Operacional</mat-radio-button>
+                    <mat-radio-button value="2">Não Operacional</mat-radio-button>
+                </mat-radio-group>
                 <mat-form-field class="form-control">
                     <mat-label>Número do documento</mat-label>
                     <input matInput formControlName="numeroDocumento" placeholder="" value="">
@@ -48,9 +46,9 @@
                 </mat-form-field>
             </div>
         </div>
-        <div class="my-button">
-            <button (click)="salvaConta()" mat-raised-button color="primary">Adicionar</button>
-            <button (click)="goBack()" mat-raised-button color="warn">Voltar</button>
+        <div class="group-button">
+            <button class="my-button-left" (click)="salvaConta()" mat-raised-button color="primary">Adicionar</button>
+            <button class="my-button-right" (click)="goBack()" mat-raised-button color="warn">Voltar</button>
         </div>
     </form>
 </app-card>
