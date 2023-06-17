@@ -21,27 +21,27 @@ export class ContaService {
     }
 
     getConta(id: number): Observable<any> {
-        return this.http.get<{ data: Conta}>(`${this.base_urlProd}/contas/${id}`, this.options);
+        return this.http.get<{ data: Conta}>(`${this.base_urlDev}/contas/${id}`, this.options);
     }
 
     getContas(): Observable<any> {
-        return this.http.get<{data: Array<Conta>}>(`${this.base_urlProd}/contas`, this.options);
+        return this.http.get<{data: Array<Conta>}>(`${this.base_urlDev}/contas`, this.options);
     }
 
     salvarConta(conta: Conta): Observable<any> {
-        return this.http.post<boolean>(`${this.base_urlProd}/contas`, conta, this.options);
+        return this.http.post<boolean>(`${this.base_urlDev}/contas`, conta, this.options);
     }
 
     editarConta(conta: Conta): Observable<any> {
-        return this.http.put<boolean>(`${this.base_urlProd}/contas/${conta.id}`, conta, this.options);
+        return this.http.put<boolean>(`${this.base_urlDev}/contas/${conta.id}`, conta, this.options);
     }
 
     excluirConta(id: number) {
-        return this.http.delete<boolean>(`${this.base_urlProd}/contas/${id}`, this.options);
+        return this.http.delete<boolean>(`${this.base_urlDev}/contas/${id}`, this.options);
     }
 
     filtrarContas(campos: Array<string>): Observable<any> {
-        return this.http.post<boolean>(`${this.base_urlProd}/contas/buscar`, campos, this.options);
+        return this.http.post<boolean>(`${this.base_urlDev}/contas/buscar`, campos, this.options);
     }
 
 }
