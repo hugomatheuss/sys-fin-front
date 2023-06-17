@@ -10,6 +10,7 @@ import { StorageUtil } from 'src/app/utils/storage.util';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  title: string = '';
   public form: UntypedFormGroup;
 
   constructor(private service: LoginService, private route: Router, private fb: UntypedFormBuilder) {
@@ -24,11 +25,11 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.title = 'Criar usuário';
   }
 
   salvar() {
     this.service.cadastrar(this.form.value).subscribe((res) => {
-      console.log(res);
       if (res.authorization) {
         StorageUtil.store('isLogged', true);
         StorageUtil.store('token', res.authorization.access_token);

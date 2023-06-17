@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -12,8 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RegisterRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   exports: [
     RegisterComponent

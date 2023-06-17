@@ -1,35 +1,40 @@
-<div class="container">
-    <div class="card">
-        <h1>Cadastrar</h1>
-        <form [formGroup]="form">
-            <div class="mb-3">
-                <span for="nome">Nome*:</span>
-                <input type="text" formControlName="name" class="form-control" id="nome">
+<app-card [titleCard]="title">
+    <form [formGroup]="form">
+        <div class="container-form">
+            <div>
+                <mat-form-field class="form-control">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" formControlName="name" id="nome" value="">
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email" id="email" value="">
+                </mat-form-field>
             </div>
-            <div class="mb-3">
-                <span for="email">Email*:</span>
-                <input type="text" formControlName="email" class="form-control" id="email">
+            <div>
+                <mat-form-field class="form-control">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput type="text" formControlName="cnpj" id="cnpj" value="">
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Razão Social</mat-label>
+                    <input matInput type="text" formControlName="razaoSocial" id="razaoSocial" value="">
+                </mat-form-field>
             </div>
-            <div class="mb-3">
-                <span for="cnpj">CNPJ*:</span>
-                <input type="text" formControlName="cnpj" class="form-control" id="cnpj">
+            <div>
+                <mat-form-field class="form-control">
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="password" formControlName="password" id="senha" value="">
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Confirmar Senha</mat-label>
+                    <input matInput type="password" formControlName="confirm_password" id="confirm_password" value="">
+                </mat-form-field>
             </div>
-            <div class="mb-3">
-                <span for="razaoSocial">Razão Social*:</span>
-                <input type="text" formControlName="razaoSocial" class="form-control" id="razaoSocial">
-            </div>
-            <div class="mb-3">
-                <span for="senha">Senha*:</span>
-                <input type="password" formControlName="password" class="form-control" id="senha">
-            </div>
-            <div class="mb-3">
-                <span for="senha">Confirmar senha*:</span>
-                <input type="password" formControlName="confirm_password" class="form-control" id="confirm_password">
-            </div>
-            <div class="button-bar">
-                <button (click)="salvar()" class="btn btn-primary">Cadastrar</button>
-                <a href="/login" class="btn btn-danger">Cancelar</a>
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
+        <div class="group-button">
+            <button (click)="salvar()" class="my-button-left" mat-raised-button color="primary">Cadastrar</button>
+            <a href="/login" class="my-button-right" mat-raised-button color="warn">Cancelar</a>
+        </div>
+    </form>
+</app-card>
