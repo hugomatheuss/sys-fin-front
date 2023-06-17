@@ -13,6 +13,7 @@ export class RelatorioListComponent implements OnInit {
     @Input() listContas: Array<any> = [];
 
     constructor(
+        private service: ContaService,
         private activatedRoute: ActivatedRoute,
         private location: Location
     ) {
@@ -23,4 +24,20 @@ export class RelatorioListComponent implements OnInit {
         this.title = '';
         this.activatedRoute.params.subscribe(params => {});
     }
+
+    getListContas(): void {
+        this.service.getContas().subscribe((res) => {
+            if (res.data) {
+              this.listContas = res.data;
+            }
+        })
+      }
+
+    removeConta(id: number) {
+        this.service.excluirConta(id).subscribe((res) => {
+          if(res) {
+            this.getListContas();
+          }
+        })
+      }
 }

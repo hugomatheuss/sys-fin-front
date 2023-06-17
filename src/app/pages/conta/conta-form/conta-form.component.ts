@@ -60,7 +60,6 @@ export class ContaFormComponent implements OnInit {
     }
   }
   
-
   goBack(): void {
     this.location.back();
   }
@@ -70,13 +69,14 @@ export class ContaFormComponent implements OnInit {
       if(this.isEditar) {
         this.service.editarConta(this.form.value).subscribe((res) => {
           if(res) {
-            this.router.navigateByUrl('contas');
+            this.router.navigateByUrl('relatorio');
           }
         })
       } else {
+        console.log(this.form.value);
         this.service.salvarConta(this.form.value).subscribe(res => {
           if(res) {
-            this.router.navigateByUrl(`contas`);
+            this.router.navigateByUrl(`relatorio`);
           }
         })
       }

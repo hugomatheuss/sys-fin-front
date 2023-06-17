@@ -34,6 +34,7 @@ export class RelatorioFormComponent implements OnInit {
     ngOnInit(): void {
         this.title = 'Relatório';
         this.activatedRoute.params.subscribe(params => {});
+        this.getListContas();
     }
 
     goBack(): void {
@@ -42,6 +43,14 @@ export class RelatorioFormComponent implements OnInit {
 
     goToForm(id?: number): void {
       this.router.navigate([`/contas/form-conta/${id?? ''}`]);
+    }
+
+    getListContas(): void {
+      this.service.getContas().subscribe((res) => {
+          if (res.data) {
+            this.listContas = res.data;
+          }
+      })
     }
 
     filtrarContas(): void {
