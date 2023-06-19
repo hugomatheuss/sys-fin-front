@@ -18,10 +18,10 @@ export class LoginService {
   }
   
   login(dados: { email: string; senha: string}): Observable<RegisterAuthorizationInterface> {
-      return this.http.post<RegisterAuthorizationInterface>(`${this.base_urlProd}/login`, dados);
+      return this.http.post<RegisterAuthorizationInterface>(`${this.base_urlDev}/login`, dados);
   }
 
   cadastrar(dados: { nome: string; email: string; senha: string }): Observable<RegisterResponseInterface> {
-      return this.http.post<RegisterResponseInterface>(`${this.base_urlProd}/register`, dados);
+      return this.http.post<RegisterResponseInterface>(`${this.base_urlDev}/register`, dados);
   }
 }

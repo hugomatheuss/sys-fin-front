@@ -16,13 +16,13 @@
         <tbody>
             <tr *ngFor="let conta of listContas">
                 <td>{{ conta?.fornecedor }}</td>
-                <td>{{ conta?.valor }}</td>
+                <td>R${{ conta?.valor }}</td>
                 <td>{{ conta?.descricao }}</td>
                 <td [ngClass]="conta?.status === '1' ? 'pago' : 'nao-pago'">{{ getStatusLabel(conta?.status) }}</td>
                 <td>{{ getTipoLabel(conta?.tipo) }}</td>
                 <td>{{ conta?.numeroDocumento }}</td>
-                <td>{{ conta?.dataPagamento }}</td>
-                <td>{{ conta?.dataVencimento }}</td>
+                <td>{{ conta?.dataPagamento | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ conta?.dataVencimento | date: 'dd/MM/yyyy'}}</td>
                 <td>
                     <button (click)="goToForm(conta.id)" mat-fab color="primary">
                         <mat-icon>edit</mat-icon>
