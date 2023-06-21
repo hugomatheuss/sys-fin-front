@@ -18,11 +18,11 @@ export class LoginService {
     return StorageUtil.get('isLogged');
   }
   
-  login(dados: { email: string; senha: string}): Observable<RegisterAuthorizationInterface> {
+  login(dados: { cnpj: string; senha: string}): Observable<RegisterAuthorizationInterface> {
       return this.http.post<RegisterAuthorizationInterface>(`${this.base_urlProd}/login`, dados);
   }
 
-  cadastrar(dados: { nome: string; email: string; senha: string }): Observable<RegisterResponseInterface> {
+  cadastrar(dados: { nome: string; cnpj: string; razaoSocial: string ; email: string; senha: string }): Observable<RegisterResponseInterface> {
       return this.http.post<RegisterResponseInterface>(`${this.base_urlProd}/register`, dados);
   }
 }
