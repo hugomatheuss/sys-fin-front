@@ -23,6 +23,6 @@ export class LoginService {
   }
 
   cadastrar(dados: { nome: string; email: string; senha: string }): Observable<RegisterResponseInterface> {
-      return this.http.post<RegisterResponseInterface>(`${this.base_urlDev}/register`, dados);
+      return this.http.post<RegisterResponseInterface>(`${this.base_urlProd}/register`, dados);
   }
 }
