@@ -9,7 +9,7 @@ import { StorageUtil } from '../utils/storage.util';
     providedIn: 'root'
 })
 export class ContaService {
-    private base_urlProd = 'https://app.sysfinan.com/';
+    private base_urlProd = 'https://app.sysfinan.com/api/auth';
     private base_urlHomo = 'https://sys-fin-api.onrender.com/api/auth';
     private base_urlDev = 'http://localhost:8000/api/auth';
     private options: any;
