@@ -8,7 +8,7 @@
                 </mat-form-field>
                 <mat-form-field class="form-control">
                     <mat-label>Valor</mat-label>
-                    <input matInput formControlName="valor" placeholder="" value="">
+                    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" matInput formControlName="valor" type="text" >
                 </mat-form-field>
                 <mat-form-field class="form-control">
                     <mat-label>Descrição</mat-label>

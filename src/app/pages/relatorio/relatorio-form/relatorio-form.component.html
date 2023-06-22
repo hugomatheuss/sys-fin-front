@@ -15,7 +15,7 @@
             <div class="relatorio-form-container">
                 <mat-form-field class="relatorio-form-control-right">
                     <mat-label>Valor</mat-label>
-                    <input matInput formControlName="valor" placeholder="" value="">
+                    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" matInput formControlName="valor" placeholder="" value="">
                 </mat-form-field>
                 <mat-radio-group formControlName="status" class="relatorio-form-control-left">
                     <mat-label>Status</mat-label>

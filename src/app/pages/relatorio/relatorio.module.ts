@@ -16,6 +16,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
     declarations: [
@@ -38,6 +39,7 @@ import { MatRadioModule } from '@angular/material/radio';
       MatNativeDateModule,
       MatCardModule,
       MatRadioModule,
+      CurrencyMaskModule,
     ],
     providers: [
       MatDatepickerModule,

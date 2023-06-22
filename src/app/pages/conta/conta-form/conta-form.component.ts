@@ -73,10 +73,12 @@ export class ContaFormComponent implements OnInit {
           }
         })
       } else {
-        console.log(this.form.value);
-        this.service.salvarConta(this.form.value).subscribe(res => {
-          if(res) {
+        this.service.salvarConta(this.form.value).subscribe( {
+          next:(res) => {
             this.router.navigateByUrl(`relatorio`);
+          },
+          error:(err) => {
+            console.log(err);
           }
         })
       }
