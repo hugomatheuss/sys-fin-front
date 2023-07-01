@@ -11,6 +11,7 @@ import html2canvas from 'html2canvas';
 export class ListComponent implements OnInit {
 
   @Output() removeConta: EventEmitter<number> = new EventEmitter();
+  @Output() pagarConta: EventEmitter<number> = new EventEmitter();
   @Input() listContas: Array<any> = [];
 
   constructor(
@@ -51,8 +52,13 @@ export class ListComponent implements OnInit {
     this.removeConta.emit(id);
   }
 
+  pagar(id: number): void {
+    this.pagarConta.emit(id);
+  }
+
   gerarPdf(): void {
     var data = document.getElementById('content')!;
+    console.log(this.listContas);
     
     html2canvas(data).then(canvas => {  
       // Few necessary setting options  

@@ -24,10 +24,13 @@
                 <td>{{ conta?.dataPagamento | date: 'dd/MM/yyyy' }}</td>
                 <td>{{ conta?.dataVencimento | date: 'dd/MM/yyyy'}}</td>
                 <td>
+                    <button [ngClass]="conta?.status === '1' ? 'conta-paga' : 'conta-nao-paga'" (click)="pagar(conta.id)" mat-fab color="primary">
+                        <mat-icon>attach_money</mat-icon>
+                    </button>
                     <button (click)="goToForm(conta.id)" mat-fab color="primary">
                         <mat-icon>edit</mat-icon>
                     </button>
-                     <button (click)="remove(conta.id)" mat-fab color="primary">
+                     <button class="button-delete" (click)="remove(conta.id)" mat-fab color="primary">
                         <mat-icon>delete</mat-icon>                    
                     </button>
                 </td>

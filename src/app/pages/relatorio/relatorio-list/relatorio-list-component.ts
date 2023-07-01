@@ -21,23 +21,35 @@ export class RelatorioListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.title = '';
-        this.activatedRoute.params.subscribe(params => {});
+      this.title = '';
+      this.activatedRoute.params.subscribe(params => {});
     }
 
     getListContas(): void {
-        this.service.getContas().subscribe((res) => {
-            if (res.data) {
-              this.listContas = res.data;
-            }
-        })
-      }
+      this.service.getContas().subscribe((res) => {
+        if (res.data) {
+          this.listContas = res.data;
+        }
+      })
+    }
 
     removeConta(id: number) {
-        this.service.excluirConta(id).subscribe((res) => {
-          if(res) {
-            this.getListContas();
-          }
-        })
-      }
+      this.service.excluirConta(id).subscribe((res) => {
+        if(res) {
+          this.getListContas();
+        }
+      })
+    }
+
+    pagarConta(id: number): void {
+      console.log(1)
+      this.service.pagarConta(id).subscribe({
+        next:(res) => {
+          this.getListContas();
+        },
+        error:(err) => {
+          console.log(err);
+        }
+      })
+    }
 }

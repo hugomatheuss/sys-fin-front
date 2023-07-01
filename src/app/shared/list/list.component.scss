@@ -1,11 +1,12 @@
 .container__list {
+    width: 100%;
     table {
         border-collapse: collapse;
         border: 1px solid #ddd;
         width: 100%;
 
         th, td {
-            padding: 15px;
+            padding: 20px;
             border: 1px solid #ddd;
         }
 
@@ -17,6 +18,18 @@
         .nao-pago {
             color: red;
             font-weight: bold;
+        }
+
+        .conta-nao-paga {
+            background-color: green;
+        }
+
+        .conta-paga {
+            display: none;
+        }
+
+        .button-delete {
+            background-color: red;
         }
     }
 }
