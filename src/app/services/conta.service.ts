@@ -46,7 +46,7 @@ export class ContaService {
     }
 
     pagarConta(id: number): Observable<any> {
-        return this.http.get<boolean>(`${this.base_urlDev}/contas/pagar/${id}`, this.options);
+        return this.http.get<boolean>(`${this.base_urlProd}/contas/pagar/${id}`, this.options);
     }
 
 }
