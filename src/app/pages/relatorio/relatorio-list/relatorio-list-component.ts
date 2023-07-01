@@ -42,9 +42,8 @@ export class RelatorioListComponent implements OnInit {
     }
 
     pagarConta(id: number): void {
-      console.log(1)
       this.service.pagarConta(id).subscribe({
-        next:(res) => {
+        next:() => {
           this.getListContas();
         },
         error:(err) => {

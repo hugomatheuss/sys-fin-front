@@ -45,4 +45,8 @@ export class ContaService {
         return this.http.post<boolean>(`${this.base_urlProd}/contas/buscar`, campos, this.options);
     }
 
+    pagarConta(id: number): Observable<any> {
+        return this.http.get<boolean>(`${this.base_urlDev}/contas/pagar/${id}`, this.options);
+    }
+
 }
