@@ -1,0 +1,32 @@
+<app-card [titleCard]="title">
+    <form [formGroup]="form">
+        <div class="container-form">
+            <div>
+                <mat-form-field class="form-control">
+                    <mat-label>Recebimento:</mat-label>
+                    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" matInput formControlName="recebimento" type="text" >
+                </mat-form-field>
+                <mat-radio-group formControlName="isDinheiro" class="form-control">
+                    <mat-label>Tipo de recebimento</mat-label>
+                    <mat-radio-button value="1">Dinheiro</mat-radio-button>
+                    <mat-radio-button value="0">Bancário</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <mat-form-field class="form-control">
+                    <mat-label>Pagamento:</mat-label>
+                    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" matInput formControlName="pagamento" type="text" >
+                </mat-form-field>
+                <mat-radio-group formControlName="isPagamentoMercadoria" class="form-control">
+                    <mat-label>Tipo de pagamento</mat-label>
+                    <mat-radio-button value="1">Mercadorias</mat-radio-button>
+                    <mat-radio-button value="0">Outros</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="group-button">
+            <button class="my-button-left" (click)="salvaLancamento()" mat-raised-button color="primary">Adicionar</button>
+            <button class="my-button-right" (click)="goBack()" mat-raised-button color="warn">Voltar</button>
+        </div>
+    </form>
+</app-card>

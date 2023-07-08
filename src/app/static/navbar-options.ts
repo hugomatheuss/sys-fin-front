@@ -8,13 +8,13 @@ export const NavbarOptions = [
         router: '/relatorio',
         needLogin: true
     },
-/*     {
+    {
         icon: '',
-        alt: 'Relatórios',
-        label: 'RELATÓRIOS',
-        router: '/relatorio',
+        alt: 'Lançamentos',
+        label: 'LANÇAMENTOS',
+        router: '/lancamentos',
         needLogin: true
-    }, */
+    },
     {
         icon: '',
         alt: 'Login',

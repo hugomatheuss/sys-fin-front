@@ -43,4 +43,13 @@ export class ContaListComponent implements OnInit {
     this.router.navigate([`/contas/form-conta/${id?? ''}`]);
   }
 
+  pagarConta(id: number): void {
+    console.log(1)
+    this.service.pagarConta(id).subscribe((res) => {
+      if (res) {
+        this.getListContas();
+      }
+    })
+  }
+
 }

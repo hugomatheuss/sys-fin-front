@@ -11,19 +11,26 @@ import html2canvas from 'html2canvas';
 export class ListComponent implements OnInit {
 
   @Output() removeConta: EventEmitter<number> = new EventEmitter();
+  @Output() removeLancamento: EventEmitter<number> = new EventEmitter();
   @Output() pagarConta: EventEmitter<number> = new EventEmitter();
   @Input() listContas: Array<any> = [];
+  @Input() listLancamentos: Array<any> = [];
+  @Input() choiceTable: number = 0;
 
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void {
-
+    console.log(this.listLancamentos);
   }
 
-  goToForm(id?: number): void {
+  goToFormConta(id?: number): void {
     this.router.navigate([`contas/form-conta/${id?? ''}`]);
+  }
+
+  goToFormLancamento(id?: number): void {
+    this.router.navigate([`lancamentos/form-lancamento/${id?? ''}`]);
   }
 
   getStatusLabel(status: string): string {
@@ -48,8 +55,12 @@ export class ListComponent implements OnInit {
     }
   }
 
-  remove(id: number): void {
+  removerConta(id: number): void {
     this.removeConta.emit(id);
+  }
+
+  removerLancamento(id: number): void {
+    this.removeLancamento.emit(id);
   }
 
   pagar(id: number): void {
