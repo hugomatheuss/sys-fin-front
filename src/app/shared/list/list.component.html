@@ -49,10 +49,10 @@
             </thead>
             <tbody>
                 <tr *ngFor="let lancamento of listLancamentos">
-                    <td>{{ lancamento?.created_at }}</td>
-                    <td>{{ lancamento?.recebimento }}</td>
-                    <td>{{ lancamento?.pagamento }}</td>
-                    <td></td>
+                    <td>{{ lancamento?.dataLancamento | date: 'dd/MM/yyyy' }}</td>
+                    <td>R${{ lancamento?.recebimentoTotal }}</td>
+                    <td>R${{ lancamento?.pagamentoTotal }}</td>
+                    <td>R${{ lancamento?.recebimentoTotal - lancamento?.pagamentoTotal}}</td>
                     <td>
                         <button (click)="goToFormLancamento(lancamento.id)" mat-fab color="primary">
                             <mat-icon>edit</mat-icon>

@@ -10,7 +10,7 @@ import { LancamentoService } from 'src/app/services/lancamento.service';
 })
 export class LancamentoListComponent implements OnInit {
 
-  title: string = 'Lançamentos';
+  title: string = 'Lançamentos Diários';
   listLancamentos: Array<Lancamento> = [];
   
 
@@ -24,9 +24,14 @@ export class LancamentoListComponent implements OnInit {
   }
 
   getListLancamentos(): void {
-    this.service.getLancamentos().subscribe((res) => {
-        if (res.data) {
-          this.listLancamentos = res.data;
+    this.service.getLancamentosDiarios().subscribe({
+        next:(res) => {
+          if (res) {
+            this.listLancamentos = res;
+          }
+        },
+        error:(err) => {
+          console.log(err);
         }
     })
   }

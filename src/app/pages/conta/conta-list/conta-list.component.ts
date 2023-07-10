@@ -44,7 +44,6 @@ export class ContaListComponent implements OnInit {
   }
 
   pagarConta(id: number): void {
-    console.log(1)
     this.service.pagarConta(id).subscribe((res) => {
       if (res) {
         this.getListContas();

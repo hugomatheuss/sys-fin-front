@@ -22,7 +22,6 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.listLancamentos);
   }
 
   goToFormConta(id?: number): void {
