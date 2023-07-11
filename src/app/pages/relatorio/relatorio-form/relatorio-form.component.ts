@@ -32,7 +32,7 @@ export class RelatorioFormComponent implements OnInit {
        }
     
     ngOnInit(): void {
-        this.title = 'Relatório';
+        this.title = 'Relatório de contas';
         this.activatedRoute.params.subscribe(params => {});
         this.getListContas();
     }

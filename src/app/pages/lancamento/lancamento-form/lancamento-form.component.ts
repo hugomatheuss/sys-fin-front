@@ -65,13 +65,13 @@ export class LancamentoFormComponent implements OnInit {
       if(this.isEditar) {
         this.service.editarLancamento(this.form.value).subscribe((res) => {
           if(res) {
-            this.router.navigateByUrl('lancamento');
+            this.router.navigateByUrl('lancamentos');
           }
         })
       } else {
         this.service.salvarLancamento(this.form.value).subscribe( {
           next:(res) => {
-            this.router.navigateByUrl(`lancamento`);
+            this.router.navigateByUrl(`lancamentos`);
           },
           error:(err) => {
             console.log(err);
