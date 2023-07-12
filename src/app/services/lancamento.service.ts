@@ -27,11 +27,6 @@ export class LancamentoService {
     getLancamentos(): Observable<any> {
         return this.http.get<{data: Array<Lancamento>}>(`${this.base_urlProd}/lancamentos`, this.options);
     }
-
-    getLancamentosDiarios(): Observable<any> {
-        return this.http.get<{data: Array<Lancamento>}>(`${this.base_urlProd}/lancamentos/diarios`, this.options);
-    }
-
     salvarLancamento(lancamento: Lancamento): Observable<any> {
         return this.http.post<boolean>(`${this.base_urlProd}/lancamentos`, lancamento, this.options);
     }

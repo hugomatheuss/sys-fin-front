@@ -24,7 +24,7 @@ export class LancamentoListComponent implements OnInit {
   }
 
   getListLancamentos(): void {
-    this.service.getLancamentosDiarios().subscribe({
+    this.service.getLancamentos().subscribe({
         next:(res) => {
           if (res) {
             this.listLancamentos = res;
