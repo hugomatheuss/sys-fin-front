@@ -24,14 +24,19 @@ export class LoginComponent implements OnInit {
   }
 
   entrar() {
-    this.service.login(this.form.value).subscribe((res) => {
-      if (!res.access_token) {
-        console.log(res)
+    this.service.login(this.form.value).subscribe( {
+      next:(res) => {
+        if (!res.access_token) {
+          console.log(res)
+        }
+          StorageUtil.store('isLogged', true);
+          StorageUtil.store('token', res.access_token);
+          StorageUtil.store('token_type', res.token_type);
+          location.href = '/relatorio';
+      },
+      error:(err) => {
+        console.log(err);
       }
-        StorageUtil.store('isLogged', true);
-        StorageUtil.store('token', res.access_token);
-        StorageUtil.store('token_type', res.token_type);
-        location.href = '/relatorio';
     });
   }
 
