@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
   entrar() {
     this.service.login(this.form.value).subscribe( {
       next:(res) => {
+        console.log("Res: ", res);
         if (!res.access_token) {
-          console.log(res)
         }
           StorageUtil.store('isLogged', true);
           StorageUtil.store('token', res.access_token);
