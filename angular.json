@@ -78,6 +78,9 @@
               "browserTarget": "sys-fin:build:development"
             }
           },
+          "options": {
+            "proxyConfig": "src/proxy.config.js"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
