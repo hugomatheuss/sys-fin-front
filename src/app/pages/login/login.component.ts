@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           location.href = '/relatorio';
       },
       error:(err) => {
-        console.log(err);
+        console.log("Erro: " , err);
       }
     });
   }
